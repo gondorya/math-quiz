@@ -118,7 +118,12 @@ export default {
 
 <style scoped>
   .btn {
-    margin: 10px;
+    margin: 20px 0;
+    padding: 15px 20px;
+  }
+
+  .panel-body {
+    padding: 40px 60px;
   }
 </style>
 
