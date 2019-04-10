@@ -5,16 +5,24 @@
     </div>
     <div class="panel-body">
       <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg">{{ buttonData[0].answer}}</button>
+        <button
+          class="btn btn-primary btn-lg"
+          @click="onAnswer(buttonData[0].correct)">{{ buttonData[0].answer}}</button>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg">{{ buttonData[1].answer}}</button>
+        <button
+          class="btn btn-primary btn-lg"
+          @click="onAnswer(buttonData[1].correct)">{{ buttonData[1].answer}}</button>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg">{{ buttonData[2].answer}}</button>
+        <button
+          class="btn btn-primary btn-lg"
+          @click="onAnswer(buttonData[2].correct)">{{ buttonData[2].answer}}</button>
       </div>
       <div class="col-xs-12 col-sm-6 text-center">
-        <button class="btn btn-primary btn-lg">{{ buttonData[3].answer}}</button>
+        <button
+          class="btn btn-primary btn-lg"
+          @click="onAnswer(buttonData[3].correct)">{{ buttonData[3].answer}}</button>
       </div>
     </div>
   </div>
@@ -97,6 +105,9 @@ export default {
       }
 
       return randomNumber;
+    },
+    onAnswer(isCorrect) {
+      this.$emit('answered', isCorrect);
     },
   },
   created() {

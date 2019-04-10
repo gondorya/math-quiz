@@ -7,7 +7,10 @@
     </div>
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
-        <component :is="mode"></component>
+        <component
+          :is="mode"
+          @answered="checkAnswer($event)"
+          @nextQuestion="mode = 'app-question'"></component>
       </div>
     </div>
   </div>
@@ -26,6 +29,15 @@ export default {
   components: {
     appQuestion: Question,
     appAnswer: Answer,
+  },
+  methods: {
+    checkAnswer(isCorrect) {
+      if (isCorrect) {
+        this.mode = 'app-answer';
+      } else {
+        alert('Answer is incorrect'); // eslint-disable-line no-alert
+      }
+    },
   },
 };
 </script>
